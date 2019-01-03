@@ -1,0 +1,55 @@
+<!-- 顶部选项卡的实现start -->
+<view class='nav'>
+  <view class='nav-item {{status==0?"nav-on":""}}' data-status='0' bindtap='bindTap'>寻物启事</view>
+  <view class='nav-item {{status==1?"nav-on":""}}' data-status='1' bindtap='bindTap'>寻人启事</view>
+  <view class='nav-item {{status==2?"nav-on":""}}' data-status='2'bindtap='bindTap'>寻宠其实</view>
+  <view class='nav-item {{status==3?"nav-on":""}}' data-status='3' bindtap='bindTap'>失物招领</view>
+</view> <!-- 顶部选项卡的实现 end -->
+
+<!-- 分类内容区显示start -->
+<swiper current='{{status}}' interval='500' bindchange='bindchange' style='width:100%;height:{{sysheight}}px'>
+  <swiper-item>
+    <scroll-view scroll-y='true' class='sv-item'>
+      <!-- 寻物启事 -->
+      <view class='svv-item'>
+        <view class='svv-img'>
+          <image mode='aspectFill' src='/pages/imgs/item.jpg'></image>
+        </view>
+        <view class='svv-info'>
+          <!-- 标题 -->
+          <view class='svv-title'>
+            学府路理工大学图书馆丢失华为手机一部
+          </view>
+          <!-- 分类 -->
+          <view class='svv-category'>
+            手机 2019-01-12
+          </view>
+          <!-- 地区 -->
+          <view class='svv-ares'>
+            哈尔滨市-南岗区
+          </view>
+          <!-- 详情 -->
+          <view class='svv-detail'>
+            本人在2019年1月12日晚在哈尔滨理工大学图书馆自习之后，将一部华为手机落在了图书馆的自习室桌面上，若有拾到的同学请联系我 QQ1611756998或者微信 18746092678
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y='true' class='sv-item'>
+      <view>寻人启事</view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y='true' class='sv-item'>
+      <view>寻宠启事</view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y='true' class='sv-item'>
+      <view>失物招领</view>
+    </scroll-view>
+  </swiper-item>
+</swiper><!-- 分类内容区显示end -->
+

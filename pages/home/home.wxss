@@ -1,0 +1,92 @@
+/* 选项卡样式实现 */
+.nav{
+  /* 弹性盒子模型布局 */
+  display: flex;
+  /* 水平展示 */
+  flex-direction: row;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 两端对齐，项目之间的间隔都相等 */
+  justify-content: space-between;
+  /* 垂直居中 */
+  justify-items: center;
+  /* 设置选项卡高度 */
+  height: 80rpx;
+}
+/* 选项卡的基本样式 */
+.nav-item{
+  /* 设置每一个子项目的宽度 */
+  width: 25%;
+  /* 设置文本水平居中 */
+  text-align: center;
+  /* 设置文本垂直居中 */
+  line-height: 80rpx;
+  /* 设置字体大小 */
+  font-size: 36rpx;
+  /* 字体为微软雅黑 */
+  font-family: '微软雅黑';
+}
+/* 设置选项卡被选中之后的颜色 */
+.nav-on{
+  /* 设置字体颜色 */
+  color: red;
+  /* 设置下划线 */
+  border-bottom: 4rpx solid red;
+}
+/* 内容区样式设置 */
+.sv-item{
+  /* 注意设置scroll-view标签的高度，否则不会出现滚动条 */
+  height: 100%;
+}
+/* 列表项整体样式设置 */
+.svv-item{
+  /* 弹性盒子布局 */
+  display: flex;
+  /* 沿水平轴线横向展示 */
+  flex-direction: row;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 垂直居中 */
+  justify-items: center;
+  /* 高度 */
+  height: 300rpx;
+  /* 宽度 */
+  width: 100%;
+  /* 圆角 */
+  border-radius: 10rpx;
+}
+/* 列表项图片样式 */
+.svv-img{
+  /* 宽度40% */
+  width: 40%;
+  /* 高度 */
+  height: 300rpx;
+  /* 弹性布局 */
+  display: flex;
+  /* 水平 */
+  flex-direction: row;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中 */
+  align-items: center;
+}
+/* 图片样式 */
+.svv-img>image{
+  width: 280rpx;
+  height: 280rpx;
+  /* 圆角 */
+  border-radius: 15rpx;
+}
+/* 详情样式 */
+.svv-info{
+  width: 60%;
+  height: 300rpx;
+  background-color: pink;
+  /* 弹性盒子布局 */
+  display: flex;
+  /* 按列布局 */
+  flex-direction: column;
+}
+
