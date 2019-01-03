@@ -83,10 +83,39 @@
 .svv-info{
   width: 60%;
   height: 300rpx;
-  background-color: pink;
-  /* 弹性盒子布局 */
-  display: flex;
-  /* 按列布局 */
-  flex-direction: column;
+}
+/* 详情项标题样式设置,单行文本溢出显示省略号 */
+.svv-title{
+  width: 100%;
+  /* 设置字体大小 */
+  font-size: 38rpx;
+  /* 设置颜色 */
+  color: #6794FF;
+  /* 隐藏 */
+  overflow: hidden;
+  /* 省略号 */
+  text-overflow: ellipsis;
+  /* 不换行 */
+  white-space: nowrap;
+}
+/* 共同样式 */
+.common{
+  font-size: 30rpx;
+  color: #ABABAB;
+}
+.svv-category{
+  color: #8E3BFF;
+}
+/* 设置详情项行间距 */
+.svv-info>view{
+  padding-top: 18rpx;
+}
+/* 设置详情的样式,多行文本溢出显示省略号 */
+.svv-detail{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  /* 展示两行 */
+  -webkit-line-clamp: 2;
 }
 
