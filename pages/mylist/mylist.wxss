@@ -1,0 +1,85 @@
+/* 内容区样式设置 */
+.sv-item{
+  /* 注意设置scroll-view标签的高度，否则不会出现滚动条 */
+  height: 100%;
+}
+/* 列表项整体样式设置 */
+.svv-item{
+  /* 弹性盒子布局 */
+  display: flex;
+  /* 沿水平轴线横向展示 */
+  flex-direction: row;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 垂直居中 */
+  justify-items: center;
+  /* 高度 */
+  height: 300rpx;
+  /* 宽度 */
+  width: 100%;
+  /* 圆角 */
+  border-radius: 10rpx;
+}
+/* 列表项图片样式 */
+.svv-img{
+  /* 宽度40% */
+  width: 40%;
+  /* 高度 */
+  height: 300rpx;
+  /* 弹性布局 */
+  display: flex;
+  /* 水平 */
+  flex-direction: row;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中 */
+  align-items: center;
+}
+/* 图片样式 */
+.svv-img>image{
+  width: 280rpx;
+  height: 280rpx;
+  /* 圆角 */
+  border-radius: 15rpx;
+}
+/* 详情样式 */
+.svv-info{
+  width: 60%;
+  height: 300rpx;
+}
+/* 详情项标题样式设置,单行文本溢出显示省略号 */
+.svv-title{
+  width: 100%;
+  /* 设置字体大小 */
+  font-size: 38rpx;
+  /* 设置颜色 */
+  color: #6794FF;
+  /* 隐藏 */
+  overflow: hidden;
+  /* 省略号 */
+  text-overflow: ellipsis;
+  /* 不换行 */
+  white-space: nowrap;
+}
+/* 共同样式 */
+.common{
+  font-size: 30rpx;
+  color: #ABABAB;
+}
+.svv-category{
+  color: #8E3BFF;
+}
+/* 设置详情项行间距 */
+.svv-info>view{
+  padding-top: 18rpx;
+}
+/* 设置详情的样式,多行文本溢出显示省略号 */
+.svv-detail{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  /* 展示两行 */
+  -webkit-line-clamp: 2;
+}
