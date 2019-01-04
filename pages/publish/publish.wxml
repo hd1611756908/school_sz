@@ -25,10 +25,15 @@
     </view>
   </view>
   <!-- 发布日期 -->
-  
+
   <!-- 选择地区 -->
   <!-- 具体地点 -->
   <!-- 失物详情 -->
   <!-- 主图（限制一张，列表展示图，如果不传系统默认提供） -->
   <!-- 详情图（限制两张，如果不传系统默认使用主图） -->
+  <!-- 提交和重置按钮 -->
+  <view class='btn-style'>
+    <button form-type="submit">提交</button>
+    <button form-type="reset">重置</button>
+  </view>
 </form>

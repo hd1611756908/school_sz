@@ -63,3 +63,41 @@ page{
 }
 
 
+
+
+
+
+/* 提交/重置按钮 */
+.btn-style{
+  /* 弹性盒子模型 */
+  display: flex;
+  /* 水平方向排列 */
+  flex-direction: row;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中 */
+  align-items: center;
+  /* 宽度 */
+  width: 100%;
+}
+/* 按钮样式 */
+.btn-style>button{
+  width: 50%;
+  display: flex;
+  /* 水平布局 */
+  flex-direction: row;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中 */
+  align-items: center;
+  /* 字体大小 */
+  font-size: 30rpx;
+  /* 字体 */
+  font-family: '微软雅黑';
+  /* 粗体 */
+  font-weight: bold;
+}
