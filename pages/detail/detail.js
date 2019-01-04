@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    resut: {
+    result: {
       id: 1001,
       pubperson:'姑苏城外一书生',
       imgsrc: '/pages/imgs/item.jpg',

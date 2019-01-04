@@ -3,7 +3,9 @@
     "pages/home/home",
     "pages/publish/publish",
     "pages/me/me",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/mylist/mylist",
+    "pages/mycollection/mycollection"
   ],
   "window": {
     "backgroundTextStyle": "light",
