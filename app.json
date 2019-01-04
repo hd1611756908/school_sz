@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/home",
     "pages/publish/publish",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,21 +13,25 @@
   },
   "tabBar": {
     "selectedColor": "#1296db",
-    "list": [{
-      "pagePath": "pages/home/home",
-      "text": "启事",
-      "iconPath": "/pages/imgs/icon/qishi_off.png",
-      "selectedIconPath": "/pages/imgs/icon/qishi_on.png"
-    },{
-      "pagePath": "pages/publish/publish",
-      "text": "发布",
-      "iconPath": "/pages/imgs/icon/fabu_off.png",
-      "selectedIconPath": "/pages/imgs/icon/fabu_on.png"
-    },{
-      "pagePath": "pages/me/me",
-      "text": "我的",
-      "iconPath": "/pages/imgs/icon/me_off.png",
-      "selectedIconPath": "/pages/imgs/icon/me_on.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "启事",
+        "iconPath": "/pages/imgs/icon/qishi_off.png",
+        "selectedIconPath": "/pages/imgs/icon/qishi_on.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "/pages/imgs/icon/fabu_off.png",
+        "selectedIconPath": "/pages/imgs/icon/fabu_on.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "/pages/imgs/icon/me_off.png",
+        "selectedIconPath": "/pages/imgs/icon/me_on.png"
+      }
+    ]
   }
 }

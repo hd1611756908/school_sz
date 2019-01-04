@@ -1,0 +1,47 @@
+page{
+  background-color: #eee;
+}
+/* 标题样式 */
+.item-title{
+  /* 字体大小 */
+  font-size: 38rpx;
+  /* 字体颜色 */
+  color: #6794FF;
+  /* 字体格式 */
+  font-family: '微软雅黑';
+  /* 居中 */
+  text-align: center;
+  /* 上下间距 */
+  margin: 0 0 20rpx 0;
+  /* 背景色 */
+  background-color: white;
+  /* 内边距 */
+  padding: 18rpx 0;
+}
+/* 发布者样式 */
+.item-publish{
+  /* 弹性盒子布局 */
+  display: flex;
+  /* 沿水平方向排列 */
+  flex-direction: row;
+  /* 可以换行并且第一行在上面 */
+  flex-wrap: wrap;
+  /* 主轴上的对其方式 */
+  justify-content: space-between;
+  /* 背景色 */
+  background-color: white;
+  /* 内边距 */
+  padding: 18rpx 0;
+  /* 字体大小 */
+  font-size: 30rpx;
+  /* 字体颜色 */
+  color: rgb(107, 103, 103);
+  /* 距离顶端边距 */
+  margin-top: 10rpx;
+}
+.item-n{
+  margin-left: 15rpx;
+}
+.item-v{
+  margin-right: 15rpx;
+}
