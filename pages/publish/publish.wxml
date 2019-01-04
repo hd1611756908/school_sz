@@ -1,2 +1,14 @@
-<!--pages/publish/publish.wxml-->
-<text>pages/publish/publish.wxml</text>
+<form bindsubmit='bindsubmit' bindreset='bindreset'>
+  <!-- 标题 -->
+  <input class='form-title' type='text' name='title' placeholder-style='text-align: center;font-size:30rpx;' placeholder='请输入失物招领标题'></input>
+  <!-- 启示类型 -->
+  
+  <!-- 发布人 -->
+
+  <!-- 丢失日期 -->
+  <!-- 选择地区 -->
+  <!-- 具体地点 -->
+  <!-- 失物详情 -->
+  <!-- 主图（限制一张，列表展示图，如果不传系统默认提供） -->
+  <!-- 详情图（限制两张，如果不传系统默认使用主图） -->
+</form>

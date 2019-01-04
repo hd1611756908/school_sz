@@ -1,1 +1,9 @@
-/* pages/publish/publish.wxss */
+page{
+  background-color: #eee;
+}
+.form-title{
+  height: 70rpx;
+  background-color: white;
+  padding: 10rpx 0;
+  text-align: center;
+}
