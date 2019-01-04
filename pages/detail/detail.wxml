@@ -19,7 +19,7 @@
 <!-- 详细地址 -->
 <view class='item-publish'>
   <view class='item-n'>详细地址: </view>
-  <view class='item-n'>哈尔滨市南岗区学府路550号哈尔滨理工大学图书馆3楼3210自习室</view>
+  <view class='item-n item-v'>哈尔滨市南岗区学府路550号哈尔滨理工大学图书馆3楼3210自习室</view>
 </view>
 <!-- 时间 -->
 <view class='item-publish'>
