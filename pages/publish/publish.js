@@ -21,7 +21,9 @@ Page({
       }
     ],
     index:0,
-    date:'2019-01-01'
+    date:'2019-01-01',
+    region:['北京市','北京市','昌平区'],
+    customItem:'全部'
   },
 
   /**
@@ -105,6 +107,15 @@ Page({
   changetime:function(e){
     this.setData({
       date: e.detail.value
+    });
+  },
+  /**
+   * 省市区选择
+   */
+  changeregion:function(e){
+    console.log(e);
+    this.setData({
+      region: e.detail.value
     });
   }
 })

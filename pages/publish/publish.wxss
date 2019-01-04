@@ -62,11 +62,6 @@ page{
   text-align: right;
 }
 
-
-
-
-
-
 /* 提交/重置按钮 */
 .btn-style{
   /* 弹性盒子模型 */
@@ -100,4 +95,79 @@ page{
   font-family: '微软雅黑';
   /* 粗体 */
   font-weight: bold;
+}
+/* 具体地点 */
+.form-address{
+  background-color: white;
+  margin-bottom: 10rpx;
+}
+.add-v{
+  width: 100%;
+}
+.add-v>textarea{
+  width: 98%;
+  padding: 5rpx 20rpx;
+  height: 100rpx;
+}
+/* 添加主图 */
+.primary{
+  background-color: white;
+  margin-bottom: 10rpx;
+}
+.add-primary{
+  height: 120rpx;
+  width: 120rpx;
+  background-color: #eee;
+  margin-left: 20rpx;
+  /* 相对定位 */
+  position: relative;
+  /* 边框 */
+  border: 4rpx solid #eee;
+}
+.add-primary>.add-h{
+  position: absolute;
+  width: 100%;
+  height: 10rpx;
+  background-color: white;
+  top: 55rpx;
+  left: 0rpx;
+}
+.add-primary>.add-s{
+  position: absolute;
+  height: 100%;
+  width: 10rpx;
+  background-color: white;
+  left: 55rpx;
+  top: 0rpx;
+}
+/* 主图展示 */
+.primary-show{
+  /* 弹性布局 */
+  display: flex;
+  /* 垂直布局 */
+  flex-direction: column;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 居中 */
+  align-items: center;
+}
+/* 图片边距 */
+.primary-show>image{
+  margin: 0 0 5rpx 0;
+}
+/* 详情展示 */
+.detail-img{
+  /* 弹性布局 */
+  display: flex;
+  /* 垂直布局 */
+  flex-direction: column;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 居中 */
+  align-items: center;
+  /* 边距 */
+  margin-top: 10rpx;
+}
+.primary-show>.detail-img{
+  margin: 0 0 5rpx 0;
 }

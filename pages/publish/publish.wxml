@@ -33,29 +33,67 @@
   </picker>
 
   <!-- 选择地区 -->
-  <view class='form-category'>
+  <!-- <view class='form-category'>
     <view class='category-n'>
       选择地区
     </view>
     <view class='category-v'>
       <input type='text' name="address" placeholder-style='font-size:25rpx;' placeholder='哈尔滨市-南岗区'></input>
     </view>
-  </view>
+  </view> -->
+
+  <picker mode='region' bindchange="changeregion">
+      <view class='pickermodel'>
+        <view class="picker-type">省市区 </view><view class='picker-v'>{{region[0]}}-{{region[1]}}-{{region[2]}}</view>
+      </view>
+  </picker>
+
   <!-- 具体地点 -->
-  <view class='form-category'>
-    <view class='category-n'>
+  <view class='form-address'>
+    <view class='category-n add-n'>
       具体地点
     </view>
-    <view class='category-v'>
-      <input type='text' name="address" placeholder-style='font-size:25rpx;' placeholder='具体地点'></input>
+    <view class='add-v'>
+      <textarea placeholder-style='font-size:30rpx;width:100%;' placeholder='如 火车站、汽车站' name='address'></textarea>
     </view>
   </view>
   <!-- 失物详情 -->
-
+  <view class='form-address'>
+    <view class='category-n add-n'>
+      失物详情
+    </view>
+    <view class='add-v'>
+      <textarea placeholder-style='font-size:30rpx;width:100%;' placeholder='请输入详情信息' name='address'></textarea>
+    </view>
+  </view>
   <!-- 主图（限制一张，列表展示图，如果不传系统默认提供） -->
-
+  <view class='primary'>
+    <view class='category-n'>
+      主图
+    </view>
+    <!-- 添加主图的图标 -->
+    <view class='add-primary'>
+      <view class='add-h'></view>
+      <view class='add-s'></view>
+    </view>
+    <view class='primary-show'>
+      <image mode='aspectFit' src='/pages/imgs/wx_wangzhe.jpeg'></image>
+    </view>
+  </view>
   <!-- 详情图（限制两张，如果不传系统默认使用主图） -->
-  
+  <view class='primary'>
+    <view class='category-n'>
+      详情图
+    </view>
+    <view class='add-primary'>
+      <view class='add-h'></view>
+      <view class='add-s'></view>
+    </view>
+    <view class='detail-img'>
+      <image mode='aspectFit' src='/pages/imgs/wx_wangzhe.jpeg'></image>
+      <image mode='aspectFit' src='/pages/imgs/wx_wangzhe.jpeg'></image>
+    </view>
+  </view>
   <!-- 提交和重置按钮 -->
   <view class='btn-style'>
     <button form-type="submit">提交</button>
