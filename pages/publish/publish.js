@@ -85,5 +85,17 @@ Page({
     this.setData({
       index: e.detail.value
     });
+  },
+  /**
+   * 表单提交
+   */
+  bindsubmit:function(e){
+    console.log(e);
+  },
+  /**
+   * 表单重置
+   */
+  bindreset:function(e){
+    console.log(e);
   }
 })
