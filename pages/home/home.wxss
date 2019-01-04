@@ -12,6 +12,8 @@
   justify-items: center;
   /* 设置选项卡高度 */
   height: 80rpx;
+  /* 背景色 */
+  background-color: #eee;
 }
 /* 选项卡的基本样式 */
 .nav-item{

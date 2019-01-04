@@ -40,10 +40,10 @@ page{
   margin-top: 10rpx;
 }
 .item-n{
-  margin-left: 15rpx;
+  margin-left: 20rpx;
 }
 .item-v{
-  margin-right: 15rpx;
+  margin-right: 20rpx;
 }
 /* 详情图片样式 */
 .img-list{
