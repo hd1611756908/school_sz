@@ -30,6 +30,10 @@
 <view class='item-publish'>
   <view class='item-n'>图片: </view>
 </view>
+<view class='img-list'>
+  <image mode='aspectFit' src='/pages/imgs/ren.png'></image>
+  <image mode='aspectFit' src='/pages/imgs/item.jpg'></image>
+</view>
 <!-- 详细描述 -->
 <view class='item-publish'>
   <view class='item-n'>详细描述: </view>

@@ -45,3 +45,19 @@ page{
 .item-v{
   margin-right: 15rpx;
 }
+/* 详情图片样式 */
+.img-list{
+  /* 宽度 */
+  width: 100%;
+  /* 背景色 */
+  background-color: white;
+  /* 弹性布局 */
+  display: flex;
+  /* 列排列 */
+  flex-direction: column;
+  /* 水平居中 */
+  align-items: center;
+}
+.img-list>image{
+  margin: 10rpx 0;
+}
