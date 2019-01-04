@@ -1,5 +1,26 @@
-<view>头像信息区域</view>
-<view>我的启示</view>
-<view>我的收藏</view>
-<view>权限设置</view>
-<view>联系客服</view>
+<view class='user'>
+  <view class='user-avatar'>
+    <image src='/pages/imgs/item.jpg' mode='aspectFit'></image>
+  </view>
+  <view class='user-info'>
+    <view>姑苏城外一书生</view>
+    <view class='user-gender'>男</view>
+  </view>
+</view>
+<!-- 我的启示列表 -->
+<view class='me-comm' bindtap='mylist'>
+  <image mode='aspectFit' src='/pages/imgs/icon/liebiao.png'></image>
+  <view class='me-wo'>我的启示</view>
+</view>
+<!-- 我的收藏列表 -->
+<view class='me-comm' bindtap='mycollection'>
+  <image mode='aspectFit' src='/pages/imgs/icon/shoucang.png'></image>
+  <view class='me-wo'>我的收藏</view>
+</view>
+<!-- 联系客服 -->
+<view>
+  <button class='me-comm' open-type='contact'>
+    <image mode='aspectFit' src='/pages/imgs/icon/kefu.png'></image>
+    <view class='me-wo'>联系客服</view>
+  </button>
+</view>

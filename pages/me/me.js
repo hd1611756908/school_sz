@@ -62,5 +62,23 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  /**
+   * 我的启示列表
+   */
+  mylist:function(e){
+    console.log(e);
+    wx.navigateTo({
+      url: '/pages/mylist/mylist',
+    });
+  },
+  /**
+   * 我的收藏
+   */
+  mycollection:function(e){
+    console.log(e);
+    wx.navigateTo({
+      url: '/pages/mycollection/mycollection',
+    })
+  },
 })
