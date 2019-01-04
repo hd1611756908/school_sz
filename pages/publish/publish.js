@@ -5,7 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    selectarray:[
+      {
+        id: 2001,
+        name: '寻物启事'
+      }, {
+        id: 2002,
+        name: '寻人启事'
+      }, {
+        id: 2003,
+        name: '寻宠启事'
+      }, {
+        id: 2004,
+        name: '失物招领'
+      }
+    ],
+    index:0
   },
 
   /**
@@ -62,5 +77,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 下拉列表
+   */
+  selectchange:function(e){
+    this.setData({
+      index: e.detail.value
+    });
   }
 })

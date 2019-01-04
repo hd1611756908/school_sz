@@ -1,9 +1,65 @@
 page{
   background-color: #eee;
 }
+/* 表单标题 */
 .form-title{
   height: 70rpx;
   background-color: white;
   padding: 10rpx 0;
   text-align: center;
 }
+/* 下拉列表 */
+.pickermodel{
+  /* 宽度 */
+  width: 100%;
+  /* 弹性盒子模型 */
+  display: flex;
+  /* 水平布局 */
+  flex-direction: row;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 水平展示 */
+  justify-content: space-between;
+  /* 垂直居中 */
+  align-items: center;
+  /* 上下边距 */
+  margin: 10rpx 0;
+  /* 背景色 */
+  background-color: white;
+}
+.picker-type{
+  padding: 10rpx 0 10rpx 20rpx;
+}
+.picker-v{
+  padding: 10rpx 20rpx 10rpx 0;
+}
+/* 失物类别样式设置 */
+.form-category{
+  /* 宽度 */
+  width: 100%;
+  /* 弹性盒子布局 */
+  display: flex;
+  /* 水平方向布局 */
+  flex-direction: row;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 水平排列方式 */
+  justify-content: space-between;
+  /* 垂直居中 */
+  align-items: center;
+  /* 背景色 */
+  background-color: white;
+  /* 边距 */
+  margin: 10rpx 0;
+}
+.category-n{
+  padding: 10rpx 0 10rpx 20rpx;
+}
+.category-v{
+  padding: 10rpx 20rpx 10rpx 0;
+}
+.category-v>input{
+  text-align: right;
+}
+
+
