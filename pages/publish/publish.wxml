@@ -24,13 +24,38 @@
       <input type='text' name="publishuser" placeholder-style='font-size:25rpx;' placeholder='发布人'></input>
     </view>
   </view>
+
   <!-- 发布日期 -->
+  <picker mode='date' value='2019-01-01' start='1990-01-01' end='2020-12-31' bindchange="changetime">
+      <view class='pickermodel'>
+        <view class="picker-type">丢失时间 </view><view class='picker-v'>{{date}}</view>
+      </view>
+  </picker>
 
   <!-- 选择地区 -->
+  <view class='form-category'>
+    <view class='category-n'>
+      选择地区
+    </view>
+    <view class='category-v'>
+      <input type='text' name="address" placeholder-style='font-size:25rpx;' placeholder='哈尔滨市-南岗区'></input>
+    </view>
+  </view>
   <!-- 具体地点 -->
+  <view class='form-category'>
+    <view class='category-n'>
+      具体地点
+    </view>
+    <view class='category-v'>
+      <input type='text' name="address" placeholder-style='font-size:25rpx;' placeholder='具体地点'></input>
+    </view>
+  </view>
   <!-- 失物详情 -->
+
   <!-- 主图（限制一张，列表展示图，如果不传系统默认提供） -->
+
   <!-- 详情图（限制两张，如果不传系统默认使用主图） -->
+  
   <!-- 提交和重置按钮 -->
   <view class='btn-style'>
     <button form-type="submit">提交</button>

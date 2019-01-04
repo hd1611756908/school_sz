@@ -20,7 +20,8 @@ Page({
         name: '失物招领'
       }
     ],
-    index:0
+    index:0,
+    date:'2019-01-01'
   },
 
   /**
@@ -90,12 +91,20 @@ Page({
    * 表单提交
    */
   bindsubmit:function(e){
-    console.log(e);
+    console.log("表单提交");
   },
   /**
    * 表单重置
    */
   bindreset:function(e){
-    console.log(e);
+    console.log("表单重置");
+  },
+  /**
+   * 丢失时间设置
+   */
+  changetime:function(e){
+    this.setData({
+      date: e.detail.value
+    });
   }
 })
