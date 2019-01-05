@@ -1,6 +1,6 @@
 <form bindsubmit='bindsubmit' bindreset='bindreset'>
   <!-- 标题 -->
-  <input class='form-title' type='text' name='title' placeholder-style='text-align: center;font-size:30rpx;' placeholder='请输入失物招领标题'></input>
+  <input class='form-title' type='text' name='title' placeholder-style='text-align: center;font-size:40rpx;' placeholder='请输入失物招领标题'></input>
   <!-- 启示类型 -->
   <picker mode='selector' range="{{selectarray}}" value='{{index}}' range-key='{{"name"}}' bindchange='selectchange'>
       <view class='pickermodel'>

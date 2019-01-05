@@ -3,7 +3,7 @@ page{
 }
 /* 表单标题 */
 .form-title{
-  height: 70rpx;
+  height: 80rpx;
   background-color: white;
   padding: 10rpx 0;
   text-align: center;
