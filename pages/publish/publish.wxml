@@ -33,15 +33,6 @@
   </picker>
 
   <!-- 选择地区 -->
-  <!-- <view class='form-category'>
-    <view class='category-n'>
-      选择地区
-    </view>
-    <view class='category-v'>
-      <input type='text' name="address" placeholder-style='font-size:25rpx;' placeholder='哈尔滨市-南岗区'></input>
-    </view>
-  </view> -->
-
   <picker mode='region' bindchange="changeregion">
       <view class='pickermodel'>
         <view class="picker-type">省市区 </view><view class='picker-v'>{{region[0]}}-{{region[1]}}-{{region[2]}}</view>

@@ -1,5 +1,6 @@
 /* 我的样式设置 */
 page{
+  /* 背景色 */
   background-color: #eee;
 }
 /* 我的用户信息样式 */

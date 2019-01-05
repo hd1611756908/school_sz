@@ -1,4 +1,5 @@
 page{
+  /* 设置背景色 */
   background-color: #eee;
 }
 /* 表单标题 */
