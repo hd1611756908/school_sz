@@ -61,3 +61,30 @@ page{
 .img-list>image{
   margin: 10rpx 0;
 }
+/* 收藏样式设置 */
+.collection{
+  display: flex;
+  /* 水平布局 */
+  flex-direction: row;
+  /* 不换行 */
+  flex-wrap: nowrap;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中 */
+  align-items: center;
+  /* 高度 */
+  height: 50rpx;
+  /* 宽度 */
+  width: 100%;
+  /* 上下边距 */
+  margin: 30rpx 0;
+}
+/* 图片样式 */
+.collection>image{
+  width: 60rpx;
+  height: 60rpx;
+}
+/* 字体大小 */
+.collection>text{
+  font-size: 35rpx;
+}

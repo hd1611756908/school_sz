@@ -39,3 +39,9 @@
   <view class='item-n'>详细描述: </view>
   <view class='item-n'>本人在2019年1月12日晚在哈尔滨理工大学图书馆自习之后，将一部华为手机落在了图书馆的自习室桌面上，若有拾到的同学请联系我 QQ1611756998或者微信 18746092678</view>
 </view>
+<!-- 收藏 -->
+<view class='collection' bindtap='collectiontap'>
+    <image wx:if="{{coll_flag}}" src='/pages/imgs/icon/shoucang.png'></image>
+    <image wx:else src='/pages/imgs/icon/shoucang_off.png'></image>
+    <text>收藏</text>
+</view>

@@ -15,7 +15,8 @@ Page({
       address: '哈尔滨市-南岗区',
       detailaddress:'哈尔滨市南岗区学府路550号哈尔滨理工大学图书馆3楼3210自习室',
       detail: '本人在2019年1月12日晚在哈尔滨理工大学图书馆自习之后，将一部华为手机落在了图书馆的自习室桌面上，若有拾到的同学请联系我 QQ1611756998或者微信 18746092678'
-    }
+    },
+    coll_flag:false
   },
 
   /**
@@ -72,5 +73,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 收藏
+   */
+  collectiontap:function(){
+    this.setData({
+      coll_flag: !this.data.coll_flag
+    });
   }
 })
