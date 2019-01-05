@@ -72,12 +72,14 @@
       主图
     </view>
     <!-- 添加主图的图标 -->
-    <view class='add-primary'>
+    <view class='add-primary' bindtap='chooseImagePrimary'>
       <view class='add-h'></view>
       <view class='add-s'></view>
     </view>
     <view class='primary-show'>
-      <image mode='aspectFit' src='/pages/imgs/wx_wangzhe.jpeg'></image>
+      <block wx:if='{{primaryimg!=""}}'>
+        <image mode='aspectFit' src='{{primaryimg}}' bindlongpress='deleteprimary'></image>
+      </block>
     </view>
   </view>
   <!-- 详情图（限制两张，如果不传系统默认使用主图） -->
@@ -85,13 +87,14 @@
     <view class='category-n'>
       详情图
     </view>
-    <view class='add-primary'>
+    <view class='add-primary' bindtap='chooseImageDetail'>
       <view class='add-h'></view>
       <view class='add-s'></view>
     </view>
     <view class='detail-img'>
-      <image mode='aspectFit' src='/pages/imgs/wx_wangzhe.jpeg'></image>
-      <image mode='aspectFit' src='/pages/imgs/wx_wangzhe.jpeg'></image>
+      <block wx:for='{{detailimgs}}' wx:key='' wx:for-item='item'>
+        <image mode='aspectFit' data-idx='{{index}}' src='{{item}}' bindlongpress='deletedetail'></image>
+      </block>
     </view>
   </view>
   <!-- 提交和重置按钮 -->

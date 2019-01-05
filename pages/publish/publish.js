@@ -23,7 +23,8 @@ Page({
     index:0,
     date:'2019-01-01',
     region:['北京市','北京市','昌平区'],
-    customItem:'全部'
+    primaryimg:'',
+    detailimgs:[]
   },
 
   /**
@@ -113,9 +114,98 @@ Page({
    * 省市区选择
    */
   changeregion:function(e){
-    console.log(e);
     this.setData({
       region: e.detail.value
     });
+  },
+  /**
+   * 选择主图
+   */
+  chooseImagePrimary:function(){
+    var that=this;
+    //调用选择图片微信API
+    wx.chooseImage({
+      success: function(e) {
+        // 显示进度
+        wx.showToast({
+          title: '上传中',
+          icon: 'loading',
+          duration: 2000
+        });
+        //获取选择到的图片
+        that.setData({
+          primaryimg: e.tempFilePaths[0]
+        });
+      },
+    });
+    
+  },
+  /**
+   * 选择详情图
+   */
+  chooseImageDetail:function(){
+    var that = this;
+    var deimgs = that.data.detailimgs;
+    wx.chooseImage({
+      count: 2,
+      success: function (e) {
+        // 显示进度
+        wx.showToast({
+          title: '上传中',
+          icon: 'loading',
+          duration: 2000
+        });
+        // 前端展示
+        that.setData({
+          detailimgs: e.tempFilePaths
+        });
+      }
+    })
+  },
+  /**
+   * 删除主图
+   */
+  deleteprimary:function(e){
+    var that=this;
+    // 删除提示
+    wx.showModal({
+      title: '删除图片',
+      content: '是否删除?',
+      success:function(res){
+        if(res.confirm){
+          that.setData({
+            primaryimg: ''
+          });
+        }
+      }
+    })
+  },
+  /**
+   * 删除详情图
+   */
+  deletedetail:function(e){
+    var that = this;
+    // 删除提示
+    wx.showModal({
+      title: '删除图片',
+      content: '是否删除?',
+      success: function (res) {
+        if (res.confirm) {
+          //获取要删除图片的数组下标
+          var index = e.currentTarget.dataset.idx;
+          
+          //被删除的数组
+          var detailimgs = that.data.detailimgs;
+          
+          detailimgs.splice(index,1);
+          
+          that.setData({
+            detailimgs: detailimgs
+          });
+        }
+      }
+    })
   }
+
+
 })

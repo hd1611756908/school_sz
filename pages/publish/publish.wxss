@@ -150,6 +150,8 @@ page{
   flex-wrap: nowrap;
   /* 居中 */
   align-items: center;
+  /* 上边距 */
+  margin-top: 10rpx;
 }
 /* 图片边距 */
 .primary-show>image{
