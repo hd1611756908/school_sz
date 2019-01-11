@@ -35,5 +35,8 @@
         "selectedIconPath": "/pages/imgs/icon/me_on.png"
       }
     ]
-  }
+  },
+  "enablePullDownRefresh": true
+
+
 }
