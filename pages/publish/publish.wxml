@@ -2,9 +2,9 @@
   <!-- 标题 -->
   <input class='form-title' type='text' name='title' placeholder-style='text-align: center;font-size:40rpx;' placeholder='请输入失物招领标题'></input>
   <!-- 启示类型 -->
-  <picker mode='selector' range="{{selectarray}}" value='{{index}}' range-key='{{"name"}}' bindchange='selectchange'>
+  <picker mode='selector' range="{{selectarray}}" value='{{index}}' range-key='{{"categoryName"}}' bindchange='selectchange'>
       <view class='pickermodel'>
-        <view class="picker-type">启示类别 </view><view class='picker-v'>{{selectarray[index].name}}</view>
+        <view class="picker-type">启示类别 </view><view class='picker-v'>{{selectarray[index].categoryName}}</view>
       </view>
   </picker>
   <view class='form-category'>
@@ -54,7 +54,7 @@
       失物详情
     </view>
     <view class='add-v'>
-      <textarea placeholder-style='font-size:30rpx;width:100%;' placeholder='请输入详情信息' name='address'></textarea>
+      <textarea placeholder-style='font-size:30rpx;width:100%;' placeholder='请输入详情信息' name='detailaddress'></textarea>
     </view>
   </view>
   <!-- 主图（限制一张，列表展示图，如果不传系统默认提供） -->

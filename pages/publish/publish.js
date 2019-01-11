@@ -4,21 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    selectarray:[
-      {
-        id: 2001,
-        name: '寻物启事'
-      }, {
-        id: 2002,
-        name: '寻人启事'
-      }, {
-        id: 2003,
-        name: '寻宠启事'
-      }, {
-        id: 2004,
-        name: '失物招领'
-      }
-    ],
+    selectarray:[],
     index:0,
     date:'2019-01-01',
     region:['北京市','北京市','昌平区'],
@@ -30,7 +16,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      var that=this;
+      wx.request({
+        url: 'http://localhost:8080/queryCategorys',
+        method:'get',
+        dataType:'json',
+        success:function(e){
+          that.setData({
+            selectarray: e.data
+          });
+        }
+      })
   },
 
   /**
@@ -94,12 +90,70 @@ Page({
    */
   bindsubmit:function(e){
     console.log("表单提交");
+    var that=this;
+    //标题
+    var title = e.detail.value.title;
+    //启事类型id
+    var selectId = this.data.selectarray[this.data.index].categoryId;
+    //失物类别
+    var loseCategory = e.detail.value.category;
+    //发布人
+    var publishUser = e.detail.value.publishuser;
+    //丢失时间
+    var loseDate=this.data.date;
+    //省市区
+    var region=this.data.region;
+    //具体地点
+    var addressDetail = e.detail.value.address;
+    //详情描述
+    var detailDesc = e.detail.value.detailaddress;
+    //主图
+    var primaryimg = this.data.primaryimg;
+    //详情图
+    var detailimgs=this.data.detailimgs;
+
+    var parmas={};
+    parmas.title = title;
+    parmas.selectId = selectId;
+    parmas.loseCategory = loseCategory;
+    parmas.publishUser = publishUser;
+    parmas.loseDate = loseDate;
+    parmas.region = region;
+    parmas.addressDetail = addressDetail;
+    parmas.detailDesc = detailDesc;
+    parmas.primaryimg = primaryimg;
+    parmas.detailimgs = detailimgs;
+
+    wx.request({
+      url: 'http://localhost:8080/addQsInfo',
+      method:'POST',
+      data:parmas,
+      dataType:'json',
+      success:function(e){
+        console.log(e);
+        //跳转首页 tabbar页面
+        wx.switchTab({
+          url: '/pages/home/home',
+        })
+      }
+
+    })
+
+
   },
   /**
    * 表单重置
    */
-  bindreset:function(e){
+  bindreset:function(){
     console.log("表单重置");
+    //失物类型置0
+    this.setData({
+      index: 0,
+      date: '2019-01-01',
+      region: ['北京市', '北京市', '昌平区'],
+      primaryimg: '',
+      detailimgs: []
+    });
   },
   /**
    * 丢失时间设置
@@ -124,6 +178,7 @@ Page({
     var that=this;
     //调用选择图片微信API
     wx.chooseImage({
+      count: 1,
       success: function(e) {
         // 显示进度
         wx.showToast({
