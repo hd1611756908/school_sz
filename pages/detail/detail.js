@@ -6,15 +6,7 @@ Page({
    */
   data: {
     result: {
-      id: 1001,
-      pubperson:'姑苏城外一书生',
-      imgsrc: '/pages/imgs/item.jpg',
-      title: '学府路理工大学图书馆丢失华为手机一部',
-      category: '手机',
-      time: '2019-01-12',
-      address: '哈尔滨市-南岗区',
-      detailaddress:'哈尔滨市南岗区学府路550号哈尔滨理工大学图书馆3楼3210自习室',
-      detail: '本人在2019年1月12日晚在哈尔滨理工大学图书馆自习之后，将一部华为手机落在了图书馆的自习室桌面上，若有拾到的同学请联系我 QQ1611756998或者微信 18746092678'
+
     },
     coll_flag:false
   },
@@ -23,7 +15,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this;
+    //console.log(options);
+    //根据ID查询详情
+    wx.request({
+      url: 'http://localhost:8080/queryQsInfoById',
+      data:{id:options.id},
+      dataType:"json",
+      success:function(e){
+        
+        that.setData({
+          result: e.data
+        });
+        
+      }
+    })
   },
 
   /**
