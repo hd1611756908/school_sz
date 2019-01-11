@@ -2,7 +2,7 @@
 <view class='nav'>
   <view class='nav-item {{status==0?"nav-on":""}}' data-status='0' bindtap='bindTap'>寻物启事</view>
   <view class='nav-item {{status==1?"nav-on":""}}' data-status='1' bindtap='bindTap'>寻人启事</view>
-  <view class='nav-item {{status==2?"nav-on":""}}' data-status='2'bindtap='bindTap'>寻宠其实</view>
+  <view class='nav-item {{status==2?"nav-on":""}}' data-status='2' bindtap='bindTap'>寻宠启事</view>
   <view class='nav-item {{status==3?"nav-on":""}}' data-status='3' bindtap='bindTap'>失物招领</view>
 </view> <!-- 顶部选项卡的实现 end -->
 
@@ -15,22 +15,22 @@
       <block wx:for='{{result.xw}}' wx:key='' wx:for-item='item'>
         <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
           <view class='svv-img'>
-            <image mode='aspectFill' src='{{item.imgsrc}}'></image>
+            <image mode='aspectFill' src='{{item.primaryImg}}'></image>
           </view>
           <view class='svv-info'>
             <!-- 标题 -->
             <view class='svv-title'>{{item.title}}</view>
             <!-- 分类 -->
             <view class='common'>
-              <text class='svv-category'>{{item.category}}</text> {{item.time}}
+              <text class='svv-category'>{{item.lostCategory}}</text> {{item.loseDate}}
             </view>
             <!-- 地区 -->
             <view class='common'>
-              地区: {{item.address}}
+              地区: {{item.areas}}
             </view>
             <!-- 详情 -->
             <view class='svv-detail common'>
-              详情: {{item.detail}}
+              详情: {{item.detailDesc}}
             </view>
           </view>
         </view>
@@ -43,22 +43,22 @@
       <block wx:for='{{result.xr}}' wx:key='' wx:for-item='item'>
         <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
           <view class='svv-img'>
-            <image mode='aspectFill' src='{{item.imgsrc}}'></image>
+            <image mode='aspectFill' src='{{item.primaryImg}}'></image>
           </view>
           <view class='svv-info'>
             <!-- 标题 -->
             <view class='svv-title'>{{item.title}}</view>
             <!-- 分类 -->
             <view class='common'>
-              <text class='svv-category'>{{item.category}}</text> {{item.time}}
+              <text class='svv-category'>{{item.lostCategory}}</text> {{item.loseDate}}
             </view>
             <!-- 地区 -->
             <view class='common'>
-              地区: {{item.address}}
+              地区: {{item.areas}}
             </view>
             <!-- 详情 -->
             <view class='svv-detail common'>
-              详情: {{item.detail}}
+              详情: {{item.detailDesc}}
             </view>
           </view>
         </view>
@@ -71,22 +71,22 @@
       <block wx:for='{{result.xc}}' wx:key='' wx:for-item='item'>
         <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
           <view class='svv-img'>
-            <image mode='aspectFill' src='{{item.imgsrc}}'></image>
+            <image mode='aspectFill' src='{{item.primaryImg}}'></image>
           </view>
           <view class='svv-info'>
             <!-- 标题 -->
             <view class='svv-title'>{{item.title}}</view>
             <!-- 分类 -->
             <view class='common'>
-              <text class='svv-category'>{{item.category}}</text> {{item.time}}
+              <text class='svv-category'>{{item.lostCategory}}</text> {{item.loseDate}}
             </view>
             <!-- 地区 -->
             <view class='common'>
-              地区: {{item.address}}
+              地区: {{item.areas}}
             </view>
             <!-- 详情 -->
             <view class='svv-detail common'>
-              详情: {{item.detail}}
+              详情: {{item.detailDesc}}
             </view>
           </view>
         </view>
@@ -99,22 +99,22 @@
       <block wx:for='{{result.sz}}' wx:key='' wx:for-item='item'>
         <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
           <view class='svv-img'>
-            <image mode='aspectFill' src='{{item.imgsrc}}'></image>
+            <image mode='aspectFill' src='{{item.primaryImg}}'></image>
           </view>
           <view class='svv-info'>
             <!-- 标题 -->
             <view class='svv-title'>{{item.title}}</view>
             <!-- 分类 -->
             <view class='common'>
-              <text class='svv-category'>{{item.category}}</text> {{item.time}}
+              <text class='svv-category'>{{item.lostCategory}}</text> {{item.loseDate}}
             </view>
             <!-- 地区 -->
             <view class='common'>
-              地区: {{item.address}}
+              地区: {{item.areas}}
             </view>
             <!-- 详情 -->
             <view class='svv-detail common'>
-              详情: {{item.detail}}
+              详情: {{item.detailDesc}}
             </view>
           </view>
         </view>
