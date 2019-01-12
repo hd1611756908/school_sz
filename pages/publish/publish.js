@@ -184,7 +184,7 @@ Page({
         wx.showToast({
           title: '上传中',
           icon: 'loading',
-          duration: 2000
+          duration: 1000
         });
         //获取选择到的图片
         that.setData({

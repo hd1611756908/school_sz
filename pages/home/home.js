@@ -157,8 +157,8 @@ Page({
   /**
    * 下拉刷新
    */
-  onPullDownRefresh() {
-    console.log("====");
+  onPullDownRefresh:function() {
+    
     var that = this;
     var r = {};
     wx.request({
