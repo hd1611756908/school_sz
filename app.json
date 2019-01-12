@@ -1,11 +1,13 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/home/home",
     "pages/publish/publish",
     "pages/me/me",
     "pages/detail/detail",
     "pages/mylist/mylist",
-    "pages/mycollection/mycollection"
+    "pages/mycollection/mycollection",
+    "pages/reindex/reindex"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,6 +39,4 @@
     ]
   },
   "enablePullDownRefresh": true
-
-
 }
