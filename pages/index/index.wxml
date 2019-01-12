@@ -1,0 +1,5 @@
+<view class='content'>
+  <text>欢迎使用失物招领系统</text>
+  <button wx:if='{{canIUse}}' open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="getuserinfo">开始使用</button>
+  <text wx:else>请升级微信版本</text>
+</view>
