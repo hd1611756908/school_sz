@@ -16,7 +16,7 @@
 }
 .content>button{
   display: block;
-  width: 300rpx;
+  width: 400rpx;
   border-radius: 20rpx;
   background-color: #1ECEFA;
   color: white;

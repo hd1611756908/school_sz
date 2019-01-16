@@ -1,3 +1,4 @@
+const app = getApp();
 Page({
 
   /**
@@ -9,7 +10,8 @@ Page({
     date:'2019-01-01',
     region:['北京市','北京市','昌平区'],
     primaryimg:'',
-    detailimgs:[]
+    detailimgs:[],
+    username:''
   },
 
   /**
@@ -18,12 +20,19 @@ Page({
   onLoad: function (options) {
       var that=this;
       wx.request({
-        url: 'http://localhost:8080/queryCategorys',
+        url: 'http://localhost:8080/queryCategoryList',
         method:'get',
         dataType:'json',
         success:function(e){
           that.setData({
             selectarray: e.data
+          });
+        }
+      });
+      wx.getUserInfo({
+        success:function(e){
+          that.setData({
+            username: e.userInfo.nickName
           });
         }
       })
@@ -89,12 +98,11 @@ Page({
    * 表单提交
    */
   bindsubmit:function(e){
-    console.log("表单提交");
     var that=this;
     //标题
     var title = e.detail.value.title;
     //启事类型id
-    var selectId = this.data.selectarray[this.data.index].categoryId;
+    var selectId = this.data.selectarray[this.data.index].id;
     //失物类别
     var loseCategory = e.detail.value.category;
     //发布人
@@ -107,36 +115,36 @@ Page({
     var addressDetail = e.detail.value.address;
     //详情描述
     var detailDesc = e.detail.value.detailaddress;
-    //主图
-    var primaryimg = this.data.primaryimg;
     //详情图
     var detailimgs=this.data.detailimgs;
 
     var parmas={};
+    var user={};
+    user.openid = app.globalData.openid;
+    user.name = publishUser;
+    parmas.user=user;
     parmas.title = title;
-    parmas.selectId = selectId;
-    parmas.loseCategory = loseCategory;
-    parmas.publishUser = publishUser;
-    parmas.loseDate = loseDate;
-    parmas.region = region;
-    parmas.addressDetail = addressDetail;
+    var category={};
+    category.id = selectId;
+    parmas.category = category;
+    parmas.time = loseDate;
+    parmas.style = loseCategory;
+    parmas.areas = region.toString();
+    parmas.address = addressDetail;
     parmas.detailDesc = detailDesc;
-    parmas.primaryimg = primaryimg;
-    parmas.detailimgs = detailimgs;
-
+    parmas.imgs = detailimgs;
+    console.log(parmas);
     wx.request({
-      url: 'http://localhost:8080/addQsInfo',
+      url: 'http://localhost:8080/addItem',
       method:'POST',
       data:parmas,
       dataType:'json',
       success:function(e){
-        console.log(e);
         //跳转首页 tabbar页面
         wx.switchTab({
           url: '/pages/home/home',
         })
       }
-
     })
 
 
@@ -151,8 +159,8 @@ Page({
       index: 0,
       date: '2019-01-01',
       region: ['北京市', '北京市', '昌平区'],
-      primaryimg: '',
-      detailimgs: []
+      detailimgs: [],
+      username:this.data.username
     });
   },
   /**
@@ -172,65 +180,24 @@ Page({
     });
   },
   /**
-   * 选择主图
-   */
-  chooseImagePrimary:function(){
-    var that=this;
-    //调用选择图片微信API
-    wx.chooseImage({
-      count: 1,
-      success: function(e) {
-        // 显示进度
-        wx.showToast({
-          title: '上传中',
-          icon: 'loading',
-          duration: 1000
-        });
-        //获取选择到的图片
-        that.setData({
-          primaryimg: e.tempFilePaths[0]
-        });
-      },
-    });
-    
-  },
-  /**
    * 选择详情图
    */
   chooseImageDetail:function(){
     var that = this;
     var deimgs = that.data.detailimgs;
     wx.chooseImage({
-      count: 2,
+      count: 3,
       success: function (e) {
         // 显示进度
         wx.showToast({
           title: '上传中',
           icon: 'loading',
-          duration: 2000
+          duration: 1000
         });
         // 前端展示
         that.setData({
           detailimgs: e.tempFilePaths
         });
-      }
-    })
-  },
-  /**
-   * 删除主图
-   */
-  deleteprimary:function(e){
-    var that=this;
-    // 删除提示
-    wx.showModal({
-      title: '删除图片',
-      content: '是否删除?',
-      success:function(res){
-        if(res.confirm){
-          that.setData({
-            primaryimg: ''
-          });
-        }
       }
     })
   },
@@ -260,6 +227,4 @@ Page({
       }
     })
   }
-
-
 })

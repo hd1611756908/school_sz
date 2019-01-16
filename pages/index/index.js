@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(app.globalData.userInfo);
     //判断是否授权过
     if (app.globalData.userInfo){
       //console.log("已经授权");
@@ -92,7 +92,6 @@ Page({
               },
               dataType:'json',
               success: function (res) {
-                //console.log(res.data.openid);
                 //授权成功
                 wx.getUserInfo({
                   success:function(ress){
@@ -102,11 +101,52 @@ Page({
                     var gender = ress.userInfo.gender;
                     //openid
                     var openid = res.data.openid;
-                    console.log(username);
-                    console.log(gender);
-                    console.log(openid);
-                    //插入数据
-                    
+                    app.globalData.openid=openid;
+                    console.log(app.globalData);
+                    //判断曾经是否授权过，查询数据库使用openid
+                    wx.request({
+                      url: 'http://localhost:8080/checkUserLogin',
+                      method:'post',
+                      data: {"openid":openid},
+                      dataType:'json',
+                      success:function(result){
+                        //如果返回true授权过直接跳转页面，如果false第一次授权，向数据库中插入用户
+                        if(result.data){
+                          console.log("授权过");
+                          //已经授权跳转首页tabbar页面
+                          wx.switchTab({
+                            url: '/pages/home/home',
+                          })
+                        }else{
+                          //第一次授权，向数据库中插入数据，然后跳转首页
+                          console.log("第一次授权");
+                          wx.request({
+                            url: 'http://localhost:8080/addUser',
+                            method:"post",
+                            data:{
+                              "openid":openid,
+                              "name":username,
+                              "gender": gender
+                            },
+                            dataType:"json",
+                            success:function(resu){
+                              console.log(resu);
+                              if(resu.data=='ok'){
+                                console.log("插入用户成功");
+                                wx.switchTab({
+                                  url: '/pages/home/home',
+                                })
+                              }else{
+                                console.log("插入失败重新授权");
+                                wx.reLaunch({
+                                  url: '/pages/reindex/reindex'
+                                })
+                              }
+                            }
+                          })
+                        }
+                      }
+                    })
                   }
                 })
               }

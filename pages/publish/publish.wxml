@@ -2,9 +2,9 @@
   <!-- 标题 -->
   <input class='form-title' type='text' name='title' placeholder-style='text-align: center;font-size:40rpx;' placeholder='请输入失物招领标题'></input>
   <!-- 启示类型 -->
-  <picker mode='selector' range="{{selectarray}}" value='{{index}}' range-key='{{"categoryName"}}' bindchange='selectchange'>
+  <picker mode='selector' range="{{selectarray}}" value='{{index}}' range-key='{{"name"}}' bindchange='selectchange'>
       <view class='pickermodel'>
-        <view class="picker-type">启示类别 </view><view class='picker-v'>{{selectarray[index].categoryName}}</view>
+        <view class="picker-type">启示类别 </view><view class='picker-v'>{{selectarray[index].name}}</view>
       </view>
   </picker>
   <view class='form-category'>
@@ -21,7 +21,7 @@
       发布人
     </view>
     <view class='category-v'>
-      <input type='text' name="publishuser" placeholder-style='font-size:25rpx;' placeholder='发布人'></input>
+      <input type='text' name="publishuser" value='{{username}}' disabled='false' placeholder-style='font-size:25rpx;' placeholder='发布人'></input>
     </view>
   </view>
 
@@ -57,26 +57,10 @@
       <textarea placeholder-style='font-size:30rpx;width:100%;' placeholder='请输入详情信息' name='detailaddress'></textarea>
     </view>
   </view>
-  <!-- 主图（限制一张，列表展示图，如果不传系统默认提供） -->
+  <!-- 上传图片（限制3张，如果不传系统默认使用主图） -->
   <view class='primary'>
     <view class='category-n'>
-      主图
-    </view>
-    <!-- 添加主图的图标 -->
-    <view class='add-primary' bindtap='chooseImagePrimary'>
-      <view class='add-h'></view>
-      <view class='add-s'></view>
-    </view>
-    <view class='primary-show'>
-      <block wx:if='{{primaryimg!=""}}'>
-        <image mode='aspectFit' src='{{primaryimg}}' bindlongpress='deleteprimary'></image>
-      </block>
-    </view>
-  </view>
-  <!-- 详情图（限制两张，如果不传系统默认使用主图） -->
-  <view class='primary'>
-    <view class='category-n'>
-      详情图
+      上传图片
     </view>
     <view class='add-primary' bindtap='chooseImageDetail'>
       <view class='add-h'></view>

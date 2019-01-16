@@ -67,44 +67,95 @@ Page({
    * 用户授权
    */
   getuserinfo: function (e) {
-    console.log("===用户授权===");
-    console.log(e);
-    //点击确定
-    if (e.detail.errMsg === "getUserInfo:ok") {
+    var that = this;
+    //判断是否授权
+    if (e.detail.errMsg === 'getUserInfo:ok') {
       console.log("允许授权");
-      var user = e.detail.userInfo;
-      //点击开始使用将获取的用户数据保存到数据库中
-
-      //用户名
-      var nickName = user.nickName;
-      //用户性别
-      var gender = user.gender == 1 ? '男' : '女';
-      //用户头像
-      var avatarUrl = user.avatarUrl;
-      var params = {};
-      params.userName = nickName;
-      params.headshot = avatarUrl;
-      params.gender = gender;
-      console.log(params);
-      //跳转到tabbar页面
-      wx.request({
-        url: 'http://localhost:8080/addUser',
-        data: params,
-        method: 'POST',
-        dataType: 'json',
+      //获取code
+      wx.login({
         success: function (e) {
-          //跳转tabbar页面
-          wx.switchTab({
-            url: '/pages/home/home',
-          })
+          if (e.code) {
+            wx.request({
+              url: 'http://localhost:8080/authorizationUser',
+              method: 'POST',
+              data: {
+                code: e.code
+              },
+              dataType: 'json',
+              success: function (res) {
+                //授权成功
+                wx.getUserInfo({
+                  success: function (ress) {
+                    //用户名
+                    var username = ress.userInfo.nickName;
+                    //用户性别
+                    var gender = ress.userInfo.gender;
+                    //openid
+                    var openid = res.data.openid;
+                    // console.log(username);
+                    // console.log(gender);
+                    // console.log(openid);
+                    //判断曾经是否授权过，查询数据库使用openid
+                    wx.request({
+                      url: 'http://localhost:8080/checkUserLogin',
+                      method: 'post',
+                      data: { "openid": openid },
+                      dataType: 'json',
+                      success: function (result) {
+                        //如果返回true授权过直接跳转页面，如果false第一次授权，向数据库中插入用户
+                        if (result.data) {
+                          console.log("授权过");
+                          //已经授权跳转首页tabbar页面
+                          wx.switchTab({
+                            url: '/pages/home/home',
+                          })
+                        } else {
+                          //第一次授权，向数据库中插入数据，然后跳转首页
+                          console.log("第一次授权");
+                          wx.request({
+                            url: 'http://localhost:8080/addUser',
+                            method: "post",
+                            data: {
+                              "openid": openid,
+                              "name": username,
+                              "gender": gender
+                            },
+                            dataType: "json",
+                            success: function (resu) {
+                              console.log(resu);
+                              if (resu.data == 'ok') {
+                                console.log("插入用户成功");
+                                wx.switchTab({
+                                  url: '/pages/home/home',
+                                })
+                              } else {
+                                console.log("插入失败重新授权");
+                                wx.reLaunch({
+                                  url: '/pages/reindex/reindex'
+                                })
+                              }
+                            }
+                          })
+                        }
+                      }
+                    })
+                  }
+                })
+              }
+            })
+          } else {
+            console.log("授权失败,稍后请重新授权");
+            wx.reLaunch({
+              url: '/pages/reindex/reindex'
+            })
+          }
         }
       })
-
-    } else {  //点击拒绝
-      console.log("拒绝授权");
-      //跳转拒绝授权页面
+    } else {
+      console.log("取消授权");
+      //跳转到重新授权页面
       wx.reLaunch({
-        url: '/pages/reindex/reindex',
+        url: '/pages/reindex/reindex'
       })
     }
   }

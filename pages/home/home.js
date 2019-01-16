@@ -84,10 +84,11 @@ Page({
     var that = this;
     var r = {};
     wx.request({
-      url: 'http://localhost:8080/queryQsInfoList',
+      url: 'http://localhost:8080/queryItemList',
       method: 'GET',
       dataType: 'json',
       success: function (res) {
+        console.log(res);
         that.setData({
           result: res.data
         });
