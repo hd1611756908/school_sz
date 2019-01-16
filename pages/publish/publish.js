@@ -129,7 +129,7 @@ Page({
     parmas.category = category;
     parmas.time = loseDate;
     parmas.style = loseCategory;
-    parmas.areas = region.toString();
+    parmas.areas = region.join("-");
     parmas.address = addressDetail;
     parmas.detailDesc = detailDesc;
     parmas.imgs = detailimgs;

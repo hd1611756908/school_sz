@@ -22,7 +22,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.useris);
+    wx.request({
+      url: 'http://localhost:8080/queryCollectionByUserId',
+      method:'POST',
+      data:{
+        userid: options.useris
+      },
+      dataType:"json",
+      success:function(res){
+        console.log(res);
+      }
+    })
   },
 
   /**

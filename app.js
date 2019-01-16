@@ -4,8 +4,13 @@ App({
     var that = this;
     //判断是否授权,如果授权获取用户信息置位
     wx.getSetting({
-      success(res){
-        that.globalData.userInfo =true;
+      success:function(res){
+        if (res.errMsg == "getSetting:ok"){
+          that.globalData.userInfo = true;  
+        }else{
+          that.globalData.userInfo = false;
+        }
+        
       }
     });
   },

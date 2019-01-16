@@ -4,12 +4,12 @@
 <!-- 发布者 -->
 <view class='item-publish'>
   <view class='item-n'>发布者: </view>
-  <view class='item-v'>{{result.publishUser}}</view>
+  <view class='item-v'>{{result.user.name}}</view>
 </view>
 <!-- 物品种类 -->
 <view class='item-publish'>
   <view class='item-n'>物品种类: </view>
-  <view class='item-v'>{{result.lostCategory}}</view>
+  <view class='item-v'>{{result.style}}</view>
 </view>
 <!-- 失物地点 -->
 <view class='item-publish'>
@@ -19,19 +19,19 @@
 <!-- 详细地址 -->
 <view class='item-publish'>
   <view class='item-n'>详细地址: </view>
-  <view class='item-n item-v'>{{result.addressDetail}}</view>
+  <view class='item-n item-v'>{{result.address}}</view>
 </view>
 <!-- 时间 -->
 <view class='item-publish'>
   <view class='item-n'>时间: </view>
-  <view class='item-v'>{{result.loseDate}}</view>
+  <view class='item-v'>{{result.time}}</view>
 </view>
 <!-- 图片描述 -->
 <view class='item-publish'>
   <view class='item-n'>图片: </view>
 </view>
 <view class='img-list'>
-  <image mode='aspectFit' wx:for='{{result.detailImgs}}'  wx:key='' wx:for-item='item' src='{{item}}'></image>
+  <image mode='aspectFit' wx:for='{{result.imgs}}'  wx:key='' wx:for-item='item' src='{{item}}'></image>
   <!-- <image mode='aspectFit' src='/pages/imgs/item.jpg'></image> -->
 </view>
 <!-- 详细描述 -->
@@ -40,7 +40,7 @@
   <view class='item-n'>{{result.detailDesc}}</view>
 </view>
 <!-- 收藏 -->
-<view class='collection' bindtap='collectiontap'>
+<view class='collection' data-userid='{{result.user.id}}' data-itemid='{{result.id}}' bindtap='collectiontap'>
     <image wx:if="{{coll_flag}}" src='/pages/imgs/icon/shoucang.png'></image>
     <image wx:else src='/pages/imgs/icon/shoucang_off.png'></image>
     <text>收藏</text>

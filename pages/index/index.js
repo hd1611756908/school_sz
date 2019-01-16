@@ -13,14 +13,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData.userInfo);
+    //console.log(app.globalData.userInfo);
     //判断是否授权过
     if (app.globalData.userInfo){
-      //console.log("已经授权");
-      //跳转到tabbar页面
-      wx.switchTab({
-        url: '/pages/home/home',
-      })
+      console.log("已经授权");
+      // wx.switchTab({
+      //   url: '/pages/home/home',
+      // })
     }
   },
 
@@ -79,7 +78,7 @@ Page({
     var that = this;
     //判断是否授权
     if (e.detail.errMsg==='getUserInfo:ok'){
-      console.log("允许授权");
+      //console.log("允许授权");
       //获取code
       wx.login({
         success:function(e){
@@ -95,6 +94,10 @@ Page({
                 //授权成功
                 wx.getUserInfo({
                   success:function(ress){
+                    //用户头像
+                    //console.log(ress);
+                    var avatarUrl = ress.userInfo.avatarUrl;
+                    app.globalData.avatarUrl = avatarUrl;
                     //用户名
                     var username = ress.userInfo.nickName;
                     //用户性别
@@ -102,7 +105,7 @@ Page({
                     //openid
                     var openid = res.data.openid;
                     app.globalData.openid=openid;
-                    console.log(app.globalData);
+                    //console.log(app.globalData);
                     //判断曾经是否授权过，查询数据库使用openid
                     wx.request({
                       url: 'http://localhost:8080/checkUserLogin',
@@ -130,9 +133,9 @@ Page({
                             },
                             dataType:"json",
                             success:function(resu){
-                              console.log(resu);
+                              //console.log(resu);
                               if(resu.data=='ok'){
-                                console.log("插入用户成功");
+                                //console.log("插入用户成功");
                                 wx.switchTab({
                                   url: '/pages/home/home',
                                 })

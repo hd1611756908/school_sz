@@ -15,14 +15,14 @@
       <block wx:for='{{result.xw}}' wx:key='' wx:for-item='item'>
         <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
           <view class='svv-img'>
-            <image mode='aspectFill' src='{{item.primaryImg}}'></image>
+            <image mode='aspectFill' src='{{item.img1}}'></image>
           </view>
           <view class='svv-info'>
             <!-- 标题 -->
             <view class='svv-title'>{{item.title}}</view>
             <!-- 分类 -->
             <view class='common'>
-              <text class='svv-category'>{{item.lostCategory}}</text> {{item.loseDate}}
+              <text class='svv-category'>{{item.style}}</text> {{item.time}}
             </view>
             <!-- 地区 -->
             <view class='common'>
@@ -43,14 +43,14 @@
       <block wx:for='{{result.xr}}' wx:key='' wx:for-item='item'>
         <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
           <view class='svv-img'>
-            <image mode='aspectFill' src='{{item.primaryImg}}'></image>
+            <image mode='aspectFill' src='{{item.img1}}'></image>
           </view>
           <view class='svv-info'>
             <!-- 标题 -->
             <view class='svv-title'>{{item.title}}</view>
             <!-- 分类 -->
             <view class='common'>
-              <text class='svv-category'>{{item.lostCategory}}</text> {{item.loseDate}}
+              <text class='svv-category'>{{item.style}}</text> {{item.time}}
             </view>
             <!-- 地区 -->
             <view class='common'>
@@ -71,14 +71,14 @@
       <block wx:for='{{result.xc}}' wx:key='' wx:for-item='item'>
         <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
           <view class='svv-img'>
-            <image mode='aspectFill' src='{{item.primaryImg}}'></image>
+            <image mode='aspectFill' src='{{item.img1}}'></image>
           </view>
           <view class='svv-info'>
             <!-- 标题 -->
             <view class='svv-title'>{{item.title}}</view>
             <!-- 分类 -->
             <view class='common'>
-              <text class='svv-category'>{{item.lostCategory}}</text> {{item.loseDate}}
+              <text class='svv-category'>{{item.style}}</text> {{item.time}}
             </view>
             <!-- 地区 -->
             <view class='common'>
@@ -99,14 +99,14 @@
       <block wx:for='{{result.sz}}' wx:key='' wx:for-item='item'>
         <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
           <view class='svv-img'>
-            <image mode='aspectFill' src='{{item.primaryImg}}'></image>
+            <image mode='aspectFill' src='{{item.img1}}'></image>
           </view>
           <view class='svv-info'>
             <!-- 标题 -->
             <view class='svv-title'>{{item.title}}</view>
             <!-- 分类 -->
             <view class='common'>
-              <text class='svv-category'>{{item.lostCategory}}</text> {{item.loseDate}}
+              <text class='svv-category'>{{item.style}}</text> {{item.time}}
             </view>
             <!-- 地区 -->
             <view class='common'>

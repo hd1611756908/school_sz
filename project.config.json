@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -78,7 +78,13 @@
 				{
 					"id": -1,
 					"name": "重新授权",
-					"pathName": "pages/reindex/reindex"
+					"pathName": "pages/reindex/reindex",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "授权",
+					"pathName": "pages/index/index"
 				}
 			]
 		}
