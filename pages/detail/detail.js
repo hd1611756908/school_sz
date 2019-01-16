@@ -23,7 +23,7 @@ Page({
       data:{id:options.id},
       dataType:"json",
       success:function(e){
-        console.log(e);
+        //console.log(e);
         that.setData({
           result: e.data
         });
@@ -39,7 +39,7 @@ Page({
           },
           dataType:'json',
           success:function(result){
-            console.log(result);
+            //console.log(result);
             if (result.data.length>0){
               //已经被我收藏
               that.setData({

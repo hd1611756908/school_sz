@@ -1,24 +1,24 @@
 <scroll-view scroll-y='true' class='sv-item'>
   <!-- 寻物启事 -->
   <block wx:for='{{result}}' wx:key='' wx:for-item='item'>
-    <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
+    <view class='svv-item' data-id='{{item.item.id}}' bindtap='querydetail'>
       <view class='svv-img'>
-        <image mode='aspectFill' src='{{item.imgsrc}}'></image>
+        <image mode='aspectFill' src='{{item.item.img1}}'></image>
       </view>
       <view class='svv-info'>
         <!-- 标题 -->
-        <view class='svv-title'>{{item.title}}</view>
+        <view class='svv-title'>{{item.item.title}}</view>
         <!-- 分类 -->
         <view class='common'>
-          <text class='svv-category'>{{item.category}}</text> {{item.time}}
+          <text class='svv-category'>{{item.item.style}}</text> {{item.item.time}}
         </view>
         <!-- 地区 -->
         <view class='common'>
-          地区: {{item.address}}
+          地区: {{item.item.areas}}
         </view>
         <!-- 详情 -->
         <view class='svv-detail common'>
-          详情: {{item.detail}}
+          详情: {{item.item.detailDesc}}
         </view>
       </view>
     </view>
