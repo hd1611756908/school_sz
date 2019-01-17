@@ -76,6 +76,7 @@ Page({
    */
   getuserinfo: function (e) {
     var that = this;
+    console.log(e);
     //判断是否授权
     if (e.detail.errMsg==='getUserInfo:ok'){
       //console.log("允许授权");

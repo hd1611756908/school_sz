@@ -1,8 +1,8 @@
 <!-- 顶部选项卡的实现start -->
 <view class='nav'>
-  <view class='nav-item {{status==0?"nav-on":""}}' data-status='0' bindtap='bindTap'>寻物启事</view>
-  <view class='nav-item {{status==1?"nav-on":""}}' data-status='1' bindtap='bindTap'>寻人启事</view>
-  <view class='nav-item {{status==2?"nav-on":""}}' data-status='2' bindtap='bindTap'>寻宠启事</view>
+  <view class='nav-item {{status==0?"nav-on":""}}' data-status='0' bindtap='bindTap'>寻物启示</view>
+  <view class='nav-item {{status==1?"nav-on":""}}' data-status='1' bindtap='bindTap'>寻人启示</view>
+  <view class='nav-item {{status==2?"nav-on":""}}' data-status='2' bindtap='bindTap'>寻宠启示</view>
   <view class='nav-item {{status==3?"nav-on":""}}' data-status='3' bindtap='bindTap'>失物招领</view>
 </view> <!-- 顶部选项卡的实现 end -->
 
