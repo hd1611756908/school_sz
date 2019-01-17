@@ -194,10 +194,28 @@ Page({
           icon: 'loading',
           duration: 1000
         });
-        // 前端展示
-        that.setData({
-          detailimgs: e.tempFilePaths
-        });
+        var imgs = e.tempFilePaths;
+        var imglist = new Array();
+        //console.log(imgs);
+        var imgfiles = [];
+        if(imgs!=null && imgs.length>0){
+          for (var i = 0; i < imgs.length;i++){
+            //调用后天接口上传图片
+            wx.uploadFile({
+              url: 'http://localhost:8080/uploadImage',
+              filePath: imgs[i],
+              name: 'file',
+              success:function(re){
+                //console.log(re.data);
+                imglist.push(re.data);
+                //console.log(imglist);
+                that.setData({
+                  detailimgs: imglist
+                });
+              }
+            })
+          }
+        }
       }
     })
   },
