@@ -153,7 +153,7 @@ Page({
    * 表单重置
    */
   bindreset:function(){
-    console.log("表单重置");
+    //console.log("表单重置");
     //失物类型置0
     this.setData({
       index: 0,
