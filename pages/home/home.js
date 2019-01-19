@@ -8,7 +8,9 @@ Page({
     status:0,
     sysheight:0,
     result:{
-    }
+    },
+    pageNo:1,
+    pageSize:6
   },
 
   /**
@@ -38,13 +40,17 @@ Page({
    */
   onShow: function () {
     var that = this;
-    var r = {};
+    var r = {
+      pageSize: that.data.pageSize,
+      pageNo: 1
+    };
     wx.request({
       url: 'http://localhost:8080/queryItemList',
       method: 'GET',
+      data:r,
       dataType: 'json',
       success: function (res) {
-        //console.log(res.data);
+        console.log(res.data);
         that.setData({
           result: res.data
         });
@@ -65,13 +71,6 @@ Page({
   onUnload: function () {
 
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  // onPullDownRefresh: function () {
-
-  // },
 
   /**
    * 页面上拉触底事件的处理函数
@@ -116,7 +115,10 @@ Page({
    */
   onPullDownRefresh:function() {
     var that = this;
-    var r = {};
+    var r = {
+      pageSize: that.data.pageSize,
+      pageNo:1
+    };
     wx.request({
       url: 'http://localhost:8080/queryItemList',
       method: 'GET',
@@ -128,5 +130,31 @@ Page({
       }
     })
     wx.stopPullDownRefresh()
+  },
+  bindscrolltolower:function(e){
+    var that = this;
+    //加载下一页
+    var pageNo = this.data.pageNo+1;
+    console.log(pageNo);
+    that.setData({
+      pageNo:pageNo
+    });
+    //请求后台
+    var r = {
+      pageSize: 6,
+      pageNo: pageNo
+    };
+    wx.request({
+      url: 'http://localhost:8080/queryItemList',
+      method: 'get',
+      data: r,
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          result: res.data
+        });
+      }
+    })
   }
 })

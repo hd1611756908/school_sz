@@ -10,7 +10,7 @@
 <swiper current='{{status}}' interval='500' bindchange='bindchange' style='width:100%;height:{{sysheight}}px'>
   <swiper-item>
     <!-- 垂直显示 scroll-y='true' -->
-    <scroll-view scroll-y='true' class='sv-item'>
+    <scroll-view scroll-y='true' class='sv-item' lower-threshold='lower-threshold'>
       <!-- 寻物启事 -->
       <block wx:for='{{result.xw}}' wx:key='' wx:for-item='item'>
         <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
@@ -38,7 +38,7 @@
     </scroll-view>
   </swiper-item>
   <swiper-item>
-    <scroll-view scroll-y='true' class='sv-item'>
+    <scroll-view scroll-y='true' class='sv-item' bindscrolltolower='bindscrolltolower'>
       <!-- 寻人启事 -->
       <block wx:for='{{result.xr}}' wx:key='' wx:for-item='item'>
         <view class='svv-item' data-id='{{item.id}}' bindtap='querydetail'>
